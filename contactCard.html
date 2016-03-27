@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coding Dojo Contact Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+
+    $(document).ready(function() {
+      $('button').click(function(){
+        var a = $('#first').val();
+        var b = $('#last').val();
+        var c = $('#desc').val();
+        console.log(a, b, c);
+        // $('#back').html($('#desc').val());
+        $('.contacts').append('<div class="card" id="' + a+b+ '"><h4 class="front">' + a +' ' + b + '</h4><p class="front">Click for description</p><p class="back">'+ c +'</div>');
+      
+      });
+
+      // $('#'+a+b).click(function(){
+      //   console.log("new contact card clicked");
+      // });
+        
+     
+    
+      // $('.card').click(function(){
+      //   $('#back').show();
+      // })
+  
+    $(document).on('click', '.card', function(){
+     console.log("card was clicked");
+     $(this).find('.front').toggle();
+     $(this).find('.back').toggle();
+
+      
+  
+    //   // $('#back').toggle();
+  
+    // $('button').click(function(){
+    // $('.contacts').append('<div class="card"></div>');
+  });
+    });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="jumbotron">The Contact Page</h2>
+      <form>
+        <label>First name</label>
+        <input id="first" type="text" placeholder="First name here">
+        <br>
+        <label>Last name</label>
+        <input id="last" type="text" placeholder="Last name here">
+        <br>
+        <label class="topalign">Description</label>
+        <textarea id="desc" rows="10" cols="50">Talk about yourself.</textarea>
+        <br>
+        <button type="reset" class="btn btn-primary">Add User</button>
+      </form>
+      <div class="contacts">
+        <div class="card">
+          <h4 class="front">Homer Simpson</h4>
+          <p class="front">Click for description</p>
+          <p class="back">Despite being an average everyday human, Homer Simpson has shown some amazing feats. He has amazing durability, he can take multiple hits by cannonballs at close range, and became a great boxer because no matter how many hits he took, he would not go down. Though one hit from world heavyweight boxing champion Drederick Tatum can give him a concussion.Homer also seems to be nigh-indestructible, considering he has fallen down a canyon twice, and only broke every bone in his body instead of being a smear on the ground. His durability was so great his head can jam a draw bridge with his head, and still can tank cars running on it (one of the cars drove over him). Along with that, Homer has shown that at times, he can move faster than a normal human can move. He also has shown feats such as being able to outdo a gold medalist. In one episode Homer effortlessly picks up a motorcycle and uses it as a sword, proving that he has immense strength.</p>
+          <img class="front" src="homer.jpg" alt="Homer Simpson">
+        </div>
+      </div>
+
+    </div>
+    
+
+
+
+  </body>
+
+</html>
